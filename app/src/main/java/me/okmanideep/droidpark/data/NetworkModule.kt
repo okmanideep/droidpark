@@ -43,6 +43,8 @@ class NetworkModule {
             install(ContentNegotiation) {
                 json(Json {
                     ignoreUnknownKeys = true
+                    encodeDefaults = true
+                    coerceInputValues = true
                 })
             }
         }

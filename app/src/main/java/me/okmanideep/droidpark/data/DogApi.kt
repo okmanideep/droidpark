@@ -13,4 +13,8 @@ class DogApi @Inject constructor(
     suspend fun getRandomImages(): List<DogImage> {
         return client.get("https://api.thedogapi.com/v1/images/search?limit=10").body()
     }
+
+    suspend fun getImageById(id: String): DogImage {
+        return client.get("https://api.thedogapi.com/v1/images/$id").body()
+    }
 }
