@@ -4,9 +4,10 @@ import dagger.Reusable
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
+import javax.inject.Inject
 
 @Reusable
-class DogApi(
+class DogApi @Inject constructor(
     @param:DogApiClient private val client: HttpClient
 ) {
     suspend fun getRandomImages(): List<DogImage> {
